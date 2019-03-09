@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(a){
+            this.a = a;
+        };
+
+        var bar = new foo(2);
+        console.log(bar);
+        //使用new调用foo时，会生成一个新对象，并将它绑定到foo（）调用的this上；
+        </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+        };
+
+        function student(name,age,grade){
+            person.apply(this,arguments);
+            this.grade = grade;
+        }
+
+        var std = new student("buke", 18, 99);// 使用new绑定this至 std对象上；
+        console.log(std);
+
+        student("window",18,99);// 此时调用函数student的this取用默认绑定，绑定于全局即window上
+        console.log(window.name);
+        console.log(window.age);
+        </script>
+</body>
+</html>
